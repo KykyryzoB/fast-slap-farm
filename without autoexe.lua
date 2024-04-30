@@ -17,6 +17,7 @@ local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_o
                     firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 1)
                 end
             end
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/KykyryzoB/fast-slap-farm/main/without%20autoexe.lua"))()
         ]])
     end
     local serverList = {}
