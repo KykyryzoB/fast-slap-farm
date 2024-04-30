@@ -4,6 +4,7 @@ local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_o
             if not game:IsLoaded() then
                 game.Loaded:Wait()
             end
+            repeat wait() until game.Players.LocalPlayer
             repeat task.wait() until game.Players.LocalPlayer.Character ~= nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
             if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
                 repeat task.wait()
