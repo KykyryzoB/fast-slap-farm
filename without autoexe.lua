@@ -4,7 +4,7 @@ local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_o
             if not game:IsLoaded() then
                 game.Loaded:Wait()
             end
-            repeat wait() until game.Players.LocalPlayer
+            repeat task.wait() until game.Players.LocalPlayer
             repeat task.wait() until game.Players.LocalPlayer.Character ~= nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
             if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
                 repeat task.wait()
@@ -12,12 +12,14 @@ local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_o
                     firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, workspace.Lobby.Teleport1, 1)
                 until game.Players.LocalPlayer.Character:FindFirstChild("entered")
             end
+            task.wait(0.2)
             for i, v in ipairs(workspace.Arena.island5.Slapples:GetDescendants()) do
                 if v.Name == "Glove" and v:FindFirstChildWhichIsA("TouchTransmitter") then
                     firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)
                     firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 1)
                 end
             end
+            task.wait(0.2)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/KykyryzoB/fast-slap-farm/main/without%20autoexe.lua"))()
         ]])
     end
